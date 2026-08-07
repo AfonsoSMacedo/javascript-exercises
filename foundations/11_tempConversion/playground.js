@@ -1,30 +1,21 @@
-function convertToCelsius(value) {}
-function convertToFahrenheit(value) {}
-  function main() {
-    console.log(convertToCelsius(32) + " expect 0");
-    console.log(convertToCelsius(100) + " expect 37.8");
-  }
+function convertToCelsius(value) {
+  celsius = (value - 32) / 1.8;
+  celsius = Math.round(celsius * 10) / 10;
+  return celsius;
+}
+function convertToFahrenheit(value) {
+  let fahrenheit = value * (9 / 5) + 32;
+  fahrenheit = Math.round(fahrenheit * 10) / 10;
+  return fahrenheit;
+}
 
-  main();
-  test("works", () => {
-    expect(convertToCelsius(32)).toEqual(0);
-  });
-  test.skip("rounds to 1 decimal", () => {
-    expect(convertToCelsius(100)).toEqual(37.8);
-  });
-  test.skip("works with negatives", () => {
-    expect(convertToCelsius(-100)).toEqual(-73.3);
-  });
-});
+function main() {
+  console.log(convertToCelsius(32) + " expect 0");
+  console.log(convertToCelsius(100) + " expect 37.8");
+  console.log(convertToCelsius(-100) + " expect -73.3");
+  console.log(convertToFahrenheit(0) + " expect 32");
+  console.log(convertToFahrenheit(73.2) + " expect 163.8");
+  console.log(convertToFahrenheit(-10) + " expect 14");
+}
 
-describe("convertToFahrenheit", () => {
-  test.skip("works", () => {
-    expect(convertToFahrenheit(0)).toEqual(32);
-  });
-  test.skip("rounds to 1 decimal", () => {
-    expect(convertToFahrenheit(73.2)).toEqual(163.8);
-  });
-  test.skip("works with negatives", () => {
-    expect(convertToFahrenheit(-10)).toEqual(14);
-  });
-});
+main();
