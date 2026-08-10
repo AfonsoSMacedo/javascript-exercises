@@ -23,9 +23,18 @@ function power(a, b) {
   return Math.pow(a, b);
 }
 function factorial(a) {
-  return a; // needs actually doing
-  //6. `factorial()`: given a single number, find its [factorial](https://www.mathsisfun.com/numbers/factorial.html
+  if (a == 1 || a == 0) {
+    return 1;
+  } else {
+    let result = a;
+    while (a > 1) {
+      result = result * (a - 1);
+      a -= 1;
+    }
+    return result;
+  }
 }
+//6. `factorial()`: given a single number, find its [factorial](https://www.mathsisfun.com/numbers/factorial.html
 function main() {
   console.log(add(0, 0) + " Expect 0");
   console.log(add(2, 2) + " Expect 4");
