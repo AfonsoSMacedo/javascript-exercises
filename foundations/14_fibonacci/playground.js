@@ -1,14 +1,15 @@
 function fibonacci(findex) {
-    if (findex < 0) {
-        return "OOPS"
+  if (findex < 0) {
+      return "OOPS"
     }
-    else {
-    let a = 0
-    for (let i = 0; i < findex; i++) {
-        a = a +a
-    }
-    return a
-};
+  else {
+    let fib = [1, 1]
+
+    while (fib.length < findex) {
+      
+    fib.push(fib.at(-1)+fib.at(-2))
+    };
+    return fib.at(-1)};
 
 };
 
